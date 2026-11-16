@@ -19,7 +19,7 @@ identifiers:
     description: "Zenodo archive of the software"
 repository-code:"https://github.com/jimonjimonster/RhiZimon_ImageProcessing"
 license: MIT
-version: 1.0.0
+version: 1.0.1
 date-released: "2026-11-16"
 keywords:
   - minirhizotron

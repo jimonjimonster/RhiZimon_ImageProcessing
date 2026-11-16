@@ -41,6 +41,8 @@ The exported calibration file contains the point pair mappings and image dimensi
 used in the dewarping step. Both homography-based and RBF-based preview corrections 
 are supported within the tool.
 
+![transformCalibration GUI](docs/screenshots/transformCalibration.png)
+
 ### `imageTransform.py` — Dewarping
 
 A batch-processing GUI tool that applies RBF (Radial Basis Function) thin-plate spline 
@@ -50,6 +52,8 @@ generated with `transformCalibration.py`. The mapping grid is computed once and 
 across all images in the batch. Output resolution can be set to match the original 
 images, the reference image from the calibration file, or a custom size.
 
+![imageTransform GUI](docs/screenshots/imageTransform.png)
+
 ### `imageStitch.py` — Stitching
 
 A GUI tool for batch-stitching dewarped minirhizotron image series into single composite 
@@ -57,6 +61,8 @@ images. Image series are detected automatically by filename pattern. The user ca
 a frame range, configure per-side pixel cropping to remove borders or overlapping areas, 
 and optionally strip the bottom edge of intermediate frames to avoid overlap seams. Each 
 detected series is exported as a separate JPEG file.
+
+![imageStitch GUI](docs/screenshots/imageStitch.png)
 
 ---
 
@@ -72,7 +78,7 @@ detected series is exported as a separate JPEG file.
 
 If you use this software in your research, please cite it as:
 
-> Thomsen, S. (2026). *RhiZimon Image Processing Pipeline* (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24284874
+> Thomsen, S. (2026). *RhiZimon Image Processing Pipeline* (Version 1.0.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24284874
 
 Citation metadata is also provided in [`CITATION.cff`](CITATION.cff).
 
