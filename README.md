@@ -78,7 +78,7 @@ detected series is exported as a separate JPEG file.
 
 If you use this software in your research, please cite it as:
 
-> Thomsen, S. (2026). *RhiZimon Image Processing Pipeline* (Version 1.0.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24284874
+> Thomsen, S. (2026). *RhiZimon Image Processing Pipeline* (Version 1.0.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24284874
 
 Citation metadata is also provided in [`CITATION.cff`](CITATION.cff).
 
