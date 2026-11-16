@@ -373,7 +373,7 @@ class ImageDewarpTool:
 
         if self.reference_img is None or self.distorted_img is None:
             if ref_count > 0:
-                self.info_label.config(text=f"⚠️ Points loaded ({ref_count}), but images are still missing")
+                self.info_label.config(text=f"Points loaded ({ref_count}), but images are still missing")
             else:
                 self.info_label.config(text="Load both images first")
         elif ref_count != dist_count:
@@ -624,12 +624,12 @@ class ImageDewarpTool:
             warning_msg = ""
 
             if reference_shape is not None and tuple(reference_shape) != current_ref_shape:
-                warning_msg += (f"⚠️ WARNING: Reference image size differs!\n"
+                warning_msg += (f"WARNING: Reference image size differs!\n"
                                f"   Saved: {reference_shape[1]}x{reference_shape[0]}\n"
                                f"   Current: {current_ref_shape[1]}x{current_ref_shape[0]}\n\n")
 
             if distorted_shape is not None and tuple(distorted_shape) != current_dist_shape:
-                warning_msg += (f"⚠️ WARNING: Distorted image size differs!\n"
+                warning_msg += (f"WARNING: Distorted image size differs!\n"
                                f"   Saved: {distorted_shape[1]}x{distorted_shape[0]}\n"
                                f"   Current: {current_dist_shape[1]}x{current_dist_shape[0]}\n\n")
 
@@ -654,11 +654,11 @@ class ImageDewarpTool:
 
             messagebox.showinfo(
                 "Loaded successfully",
-                f"✓ {num_points} point pairs have been loaded!\n\n"
+                f"{num_points} point pairs have been loaded!\n\n"
                 f"You can now edit the points:\n"
-                f"• Move points: click and drag\n"
-                f"• New points: click on an empty spot\n"
-                f"• Delete points: 'Delete last point'\n\n"
+                f"- Move points: click and drag\n"
+                f"- New points: click on an empty spot\n"
+                f"- Delete points: 'Delete last point'\n\n"
                 f"Don't forget to export your changes!"
             )
 

@@ -58,12 +58,12 @@ class MinirhizotronGUI:
         main_frame.columnconfigure(1, weight=1)
 
         # Title
-        title_label = ttk.Label(main_frame, text="🔬 Minirhizotron Image Dewarping v2",
+        title_label = ttk.Label(main_frame, text="Minirhizotron Image Dewarping v2",
                                font=('Helvetica', 18, 'bold'))
         title_label.grid(row=0, column=0, columnspan=3, pady=(0, 20))
 
         # Control points section
-        control_frame = ttk.LabelFrame(main_frame, text="1️⃣ Control Points", padding="15")
+        control_frame = ttk.LabelFrame(main_frame, text="1. Control Points", padding="15")
         control_frame.grid(row=1, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 10))
         control_frame.columnconfigure(1, weight=1)
 
@@ -83,17 +83,17 @@ class MinirhizotronGUI:
                                        font=('Helvetica', 9), state='disabled')
         self.control_entry.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=(0, 10))
 
-        self.control_btn = ttk.Button(points_input_frame, text="📂 Load file",
+        self.control_btn = ttk.Button(points_input_frame, text="Load file",
                                       command=self.load_control_points,
                                       state='disabled', width=15)
         self.control_btn.grid(row=0, column=1)
 
-        self.control_info_label = ttk.Label(control_frame, text="✓ Default points: 25 point pairs",
+        self.control_info_label = ttk.Label(control_frame, text="Default points: 25 point pairs",
                                            foreground="green", font=('Helvetica', 9))
         self.control_info_label.grid(row=3, column=0, columnspan=3, sticky=tk.W, pady=(5, 0))
 
         # Output resolution section
-        resolution_frame = ttk.LabelFrame(main_frame, text="2️⃣ Output Resolution", padding="15")
+        resolution_frame = ttk.LabelFrame(main_frame, text="2. Output Resolution", padding="15")
         resolution_frame.grid(row=2, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 10))
         resolution_frame.columnconfigure(0, weight=1)
 
@@ -115,7 +115,7 @@ class MinirhizotronGUI:
         ttk.Entry(custom_res_frame, textvariable=self.custom_height, width=10).grid(row=0, column=4)
 
         # Input folder section
-        ttk.Label(main_frame, text="3️⃣ Input folder:", font=('Helvetica', 10, 'bold')).grid(
+        ttk.Label(main_frame, text="3. Input folder:", font=('Helvetica', 10, 'bold')).grid(
             row=3, column=0, sticky=tk.W, pady=(5, 5))
 
         input_frame = ttk.Frame(main_frame)
@@ -126,12 +126,12 @@ class MinirhizotronGUI:
                                      font=('Helvetica', 9))
         self.input_entry.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=(0, 10))
 
-        input_btn = ttk.Button(input_frame, text="📁 Browse",
+        input_btn = ttk.Button(input_frame, text="Browse",
                               command=self.select_input_folder, width=15)
         input_btn.grid(row=0, column=1)
 
         # Output folder section
-        ttk.Label(main_frame, text="4️⃣ Output folder:", font=('Helvetica', 10, 'bold')).grid(
+        ttk.Label(main_frame, text="4. Output folder:", font=('Helvetica', 10, 'bold')).grid(
             row=5, column=0, sticky=tk.W, pady=(5, 5))
 
         output_frame = ttk.Frame(main_frame)
@@ -142,7 +142,7 @@ class MinirhizotronGUI:
                                       font=('Helvetica', 9))
         self.output_entry.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=(0, 10))
 
-        output_btn = ttk.Button(output_frame, text="📁 Browse",
+        output_btn = ttk.Button(output_frame, text="Browse",
                                command=self.select_output_folder, width=15)
         output_btn.grid(row=0, column=1)
 
@@ -162,7 +162,7 @@ class MinirhizotronGUI:
         self.progress_label.grid(row=10, column=0, columnspan=3, pady=(0, 15))
 
         # Start Button
-        self.start_btn = ttk.Button(main_frame, text="▶ Start dewarping",
+        self.start_btn = ttk.Button(main_frame, text="Start dewarping",
                                     command=self.start_processing,
                                     style='Accent.TButton')
         self.start_btn.grid(row=11, column=0, columnspan=3, pady=(0, 15), ipadx=20, ipady=10)
@@ -186,13 +186,13 @@ class MinirhizotronGUI:
         self.log_text['yscrollcommand'] = scrollbar.set
 
         # Info box at the bottom
-        info_frame = ttk.LabelFrame(main_frame, text="ℹ️ Notes", padding="10")
+        info_frame = ttk.LabelFrame(main_frame, text="Notes", padding="10")
         info_frame.grid(row=14, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(10, 0))
 
-        info_text = ("• Only JPG files are processed\n"
-                    "• Dewarped images get the prefix 'corrected_'\n"
-                    "• RBF interpolation for non-linear distortions\n"
-                    "• Recommended: 'Same as original images' for best quality")
+        info_text = ("- Only JPG files are processed\n"
+                    "- Dewarped images get the prefix 'corrected_'\n"
+                    "- RBF interpolation for non-linear distortions\n"
+                    "- Recommended: 'Same as original images' for best quality")
         ttk.Label(info_frame, text=info_text, font=('Helvetica', 8),
                  foreground='#555555').grid(row=0, column=0, sticky=tk.W)
 
@@ -209,13 +209,13 @@ class MinirhizotronGUI:
             self.control_btn.config(state='normal')
             if self.control_points_file.get():
                 filename = os.path.basename(self.control_points_file.get())
-                self.control_info_label.config(text=f"✓ Loaded: {filename}", foreground="green")
+                self.control_info_label.config(text=f"Loaded: {filename}", foreground="green")
             else:
-                self.control_info_label.config(text="⚠ Please load a .npy file", foreground="orange")
+                self.control_info_label.config(text="Please load a .npy file", foreground="orange")
         else:
             self.control_entry.config(state='disabled')
             self.control_btn.config(state='disabled')
-            self.control_info_label.config(text="✓ Default points: 25 point pairs", foreground="green")
+            self.control_info_label.config(text="Default points: 25 point pairs", foreground="green")
 
     def load_control_points(self):
         """Loads control points from a .npy file"""
@@ -234,7 +234,7 @@ class MinirhizotronGUI:
                 self.control_points_file.set(filepath)
 
                 num_points = len(self.source_points)
-                info_text = f"✓ Loaded: {num_points} point pairs"
+                info_text = f"Loaded: {num_points} point pairs"
                 if self.reference_shape is not None:
                     info_text += f" | Ref: {self.reference_shape[1]}x{self.reference_shape[0]}"
                 if self.distorted_shape is not None:
@@ -268,10 +268,10 @@ class MinirhizotronGUI:
                         if f.lower().endswith('.jpg')]
             count = len(jpg_files)
             if count > 0:
-                self.info_label.config(text=f"✓ {count} JPG image(s) found",
+                self.info_label.config(text=f"{count} JPG image(s) found",
                                       foreground="green")
             else:
-                self.info_label.config(text="⚠ No JPG images found",
+                self.info_label.config(text="No JPG images found",
                                       foreground="orange")
 
     def log_message(self, message, level="INFO"):
@@ -438,11 +438,11 @@ class MinirhizotronGUI:
                 img_bgr = cv2.cvtColor(img_corrected, cv2.COLOR_RGB2BGR)
                 cv2.imwrite(output_path, img_bgr)
 
-                self.log_message(f"✓ Saved successfully: {output_filename}", "SUCCESS")
+                self.log_message(f"Saved successfully: {output_filename}", "SUCCESS")
                 success_count += 1
 
             except Exception as e:
-                self.log_message(f"✗ Error with {filename}: {str(e)}", "ERROR")
+                self.log_message(f"Error with {filename}: {str(e)}", "ERROR")
                 error_count += 1
 
             # Update Progress Bar

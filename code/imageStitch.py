@@ -232,7 +232,7 @@ class ImageStitcherGUI:
         if len(dimensions) == 1:
             width, height = list(dimensions)[0]
             self.dimension_label.config(
-                text=f"Image dimensions: {width} x {height} px ✓",
+                text=f"Image dimensions: {width} x {height} px",
                 fg="green"
             )
         elif len(dimensions) > 1:
