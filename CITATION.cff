@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: "RhiZimon Image Processing Pipeline"
+abstract: >-
+  A three-step GUI-based pipeline for dewarping and stitching minirhizotron
+  images. It allows users to calibrate a distortion correction using control
+  point pairs, apply it in batch using thin-plate spline RBF interpolation,
+  and stitch the corrected images into continuous root profiles.
+authors:
+  - family-names: Thomsen
+    given-names: Simon
+    affiliation: Universität Hamburg
+    orcid: "https://orcid.org/0000-0002-3772-7591"
+repository-code: "https://github.com/jimonjimonster/RhiZimon_ImageProcessing"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-16"
+keywords:
+  - minirhizotron
+  - root imaging
+  - image dewarping
+  - image stitching
+  - thin-plate spline
+  - Python
