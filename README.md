@@ -1,6 +1,6 @@
 # RhiZimon Image Processing Pipeline
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24284874.svg)](https://doi.org/10.5281/zenodo.24284874)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24284873.svg)](https://doi.org/10.5281/zenodo.24284873)
 
 A three-step GUI-based pipeline for dewarping and stitching minirhizotron images.
 Minirhizotron cameras typically produce images with lens-induced distortion and 
@@ -78,9 +78,9 @@ detected series is exported as a separate JPEG file.
 
 If you use this software in your research, please cite it as:
 
-> Thomsen, S. (2026). *RhiZimon Image Processing Pipeline* (Version 1.0.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24284874
+> Thomsen, S. (2026). *RhiZimon Image Processing Pipeline* [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24284873
 
-Citation metadata is also provided in [`CITATION.cff`](CITATION.cff).
+This DOI always resolves to the latest version. To cite a specific version, use the version DOI listed on the Zenodo record. Citation metadata is also provided in [`CITATION.cff`](CITATION.cff).
 
 ---
 
